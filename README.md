@@ -10,6 +10,7 @@ A hands-on course covering the foundations of production AI engineering — from
 | --- | ------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
 | 01  | [Dense Vector Retrieval](./01_Dense_Vector_Retrieval/)                          | Build a RAG pipeline using LangChain, OpenAI embeddings, and an in-memory Qdrant vector store                   |
 | 02  | [Agentic RAG with LangGraph & LangChain](./02_Agentic_RAG_LangGraph_LangChain/) | Make retrieval an optional tool the agent calls on demand using LangChain middleware and LangGraph `StateGraph` |
+| 03  | [Agent Memory & Knowledge Graph](./03_Agent_Memory_LangGraph_LangChain/)        | Implement all major agent memory types and implement knowledge graph                                            |
 
 ---
 
@@ -61,8 +62,15 @@ The-AI-Engineering-Certification-v1.0-main/
 │   ├── README.md
 │   └── data/
 │       └── cat_health_guidelines.pdf
-└── 02_Agentic_RAG_LangGraph_LangChain/
-    ├── 01_Cat_Health_Agentic_RAG_LangGraph_LangChain.ipynb
+├── 02_Agentic_RAG_LangGraph_LangChain/
+│   ├── 01_Cat_Health_Agentic_RAG_LangGraph_LangChain.ipynb
+│   ├── pyproject.toml
+│   ├── README.md
+│   └── data/
+│       └── cat_health_guidelines.md
+└── 03_Agent_Memory_LangGraph_LangChain/
+    ├── 01_Cat_Health_Agent_Memory_LangGraph_LangChain.ipynb
+    ├── 02_Cat_Health_Agent_Memory_From_Scratch.ipynb
     ├── pyproject.toml
     ├── README.md
     └── data/
