@@ -1,0 +1,29 @@
+[project]
+name = "aim-synthetic-data-generation-rag-evals"
+version = "0.1.0"
+description = "Session 5 PDF-based synthetic data generation and RAG evaluation through Vercel AI Gateway."
+requires-python = ">=3.12"
+dependencies = [
+    "ipykernel>=6.29.0",
+    "instructor>=1.15.0,<2.0.0",
+    "jupyterlab>=4.2.0",
+    "langchain>=1.3.0,<2.0.0",
+    # The pinned Ragas build imports a legacy Vertex AI module removed in
+    # langchain-community 0.4.
+    "langchain-community==0.3.31",
+    "langchain-openai>=1.2.0,<2.0.0",
+    "langchain-qdrant>=1.0.0,<2.0.0",
+    "langchain-text-splitters>=1.0.0,<2.0.0",
+    "langsmith>=0.8.0,<0.9.0",
+    "nbformat>=5.10.0,<6.0.0",
+    "openai>=2.0.0,<3.0.0",
+    "openevals>=0.2.0,<0.3.0",
+    "pandas>=2.2.0,<4.0.0",
+    "pypdf>=6.0.0,<7.0.0",
+    "qdrant-client>=1.15.0,<2.0.0",
+    "ragas @ git+https://github.com/vibrantlabsai/ragas.git@298b68274234c060deacab3cf5fb52aa3a20e885",
+    "rapidfuzz>=3.14.0,<4.0.0",
+]
+
+[tool.uv]
+package = false

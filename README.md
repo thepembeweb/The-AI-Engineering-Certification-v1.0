@@ -12,6 +12,7 @@ A hands-on course covering the foundations of production AI engineering — from
 | 02  | [Agentic RAG with LangGraph & LangChain](./02_Agentic_RAG_LangGraph_LangChain/) | Make retrieval an optional tool the agent calls on demand using LangChain middleware and LangGraph `StateGraph` |
 | 03  | [Agent Memory & Knowledge Graph](./03_Agent_Memory_LangGraph_LangChain/)        | Implement all major agent memory types and implement knowledge graph                                            |
 | 04  | [Multi-Agent Systems](./04_Multi_Agent_Systems/)                                | Build a multi-agent deep research system using LangChain and LangGraph                                          |
+| 05  | [Multi-Agent Systems](./05_Synthetic_Data_Generation_for_RAG_Evals/)            | Build a multi-agent deep research synthetic data generation for rag evals                                       |
 
 ---
 
@@ -76,8 +77,16 @@ The-AI-Engineering-Certification-v1.0-main/
 │   ├── README.md
 │   └── data/
 │       └── cat_health_guidelines.md
-└── 04_Multi_Agent_Systems/
-    ├── 01_Cat_Health_Deep_Research_Multi_Agent_LangChain_LangGraph.ipynb
+├── 04_Multi_Agent_Systems/
+│   ├── 01_Cat_Health_Deep_Research_Multi_Agent_LangChain_LangGraph.ipynb
+│   ├── pyproject.toml
+│   └── README.md
+└── 05_Synthetic_Data_Generation_for_RAG_Evals/
+    ├── 01_Cat_Health_Synthetic_Data_Generation_Ragas_LangSmith.ipynb
     ├── pyproject.toml
-    └── README.md
+    ├── README.md
+    ├── artifacts/
+    │   ├── cat_health_knowledge_graph.json
+    │   └── cat_health_synthetic_testset.jsonl
+    └── data/
 ```
