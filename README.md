@@ -6,13 +6,14 @@ A hands-on course covering the foundations of production AI engineering — from
 
 ## Modules
 
-| #   | Module                                                                          | Description                                                                                                     |
-| --- | ------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| 01  | [Dense Vector Retrieval](./01_Dense_Vector_Retrieval/)                          | Build a RAG pipeline using LangChain, OpenAI embeddings, and an in-memory Qdrant vector store                   |
-| 02  | [Agentic RAG with LangGraph & LangChain](./02_Agentic_RAG_LangGraph_LangChain/) | Make retrieval an optional tool the agent calls on demand using LangChain middleware and LangGraph `StateGraph` |
-| 03  | [Agent Memory & Knowledge Graph](./03_Agent_Memory_LangGraph_LangChain/)        | Implement all major agent memory types and implement knowledge graph                                            |
-| 04  | [Multi-Agent Systems](./04_Multi_Agent_Systems/)                                | Build a multi-agent deep research system using LangChain and LangGraph                                          |
-| 05  | [Multi-Agent Systems](./05_Synthetic_Data_Generation_for_RAG_Evals/)            | Build a multi-agent deep research synthetic data generation for rag evals                                       |
+| #   | Module                                                                                   | Description                                                                                                     |
+| --- | ---------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| 01  | [Dense Vector Retrieval](./01_Dense_Vector_Retrieval/)                                   | Build a RAG pipeline using LangChain, OpenAI embeddings, and an in-memory Qdrant vector store                   |
+| 02  | [Agentic RAG with LangGraph & LangChain](./02_Agentic_RAG_LangGraph_LangChain/)          | Make retrieval an optional tool the agent calls on demand using LangChain middleware and LangGraph `StateGraph` |
+| 03  | [Agent Memory & Knowledge Graph](./03_Agent_Memory_LangGraph_LangChain/)                 | Implement all major agent memory types and implement knowledge graph                                            |
+| 04  | [Multi-Agent Systems](./04_Multi_Agent_Systems/)                                         | Build a multi-agent deep research system using LangChain and LangGraph                                          |
+| 05  | [Synthetic Data Generation for RAG Evals](./05_Synthetic_Data_Generation_for_RAG_Evals/) | Synthetic data generation for rag evals                                                                         |
+| 06  | [Agentic RAG Evaluation](./06_Agentic_RAG_Evaluation/)                                   | Agentic RAG evaluation                                                                                          |
 
 ---
 
@@ -81,12 +82,19 @@ The-AI-Engineering-Certification-v1.0-main/
 │   ├── 01_Cat_Health_Deep_Research_Multi_Agent_LangChain_LangGraph.ipynb
 │   ├── pyproject.toml
 │   └── README.md
-└── 05_Synthetic_Data_Generation_for_RAG_Evals/
-    ├── 01_Cat_Health_Synthetic_Data_Generation_Ragas_LangSmith.ipynb
+├── 05_Synthetic_Data_Generation_for_RAG_Evals/
+│   ├── 01_Cat_Health_Synthetic_Data_Generation_Ragas_LangSmith.ipynb
+│   ├── pyproject.toml
+│   ├── README.md
+│   ├── artifacts/
+│   │   ├── cat_health_knowledge_graph.json
+│   │   └── cat_health_synthetic_testset.jsonl
+│   └── data/
+└── 06_Agentic_RAG_Evaluation/
+    ├── 01_Metal_Price_Agent_Evaluation_Ragas_LangGraph.ipynb
     ├── pyproject.toml
     ├── README.md
-    ├── artifacts/
-    │   ├── cat_health_knowledge_graph.json
-    │   └── cat_health_synthetic_testset.jsonl
     └── data/
+        ├── agent_regression_suite.jsonl
+        └── HealthWellnessGuide.txt
 ```
