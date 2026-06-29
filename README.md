@@ -15,6 +15,7 @@ A hands-on course covering the foundations of production AI engineering — from
 | 05  | [Synthetic Data Generation for RAG Evals](./05_Synthetic_Data_Generation_for_RAG_Evals/) | Synthetic data generation for rag evals                                                                         |
 | 06  | [Agentic RAG Evaluation](./06_Agentic_RAG_Evaluation/)                                   | Agentic RAG evaluation                                                                                          |
 | 07  | [Advanced Retrievers](./07_Advanced_Retrievers/)                                         | Advanced Retrievers                                                                                             |
+| 08  | [MCP](./08_MCP/)                                                                         | MCP                                                                                                             |
 
 ---
 
@@ -98,10 +99,18 @@ The-AI-Engineering-Certification-v1.0-main/
 │   └── data/
 │       ├── agent_regression_suite.jsonl
 │       └── HealthWellnessGuide.txt
-└── 07_Advanced_Retrievers/
-   ├── 01_Cat_Health_Advanced_Retrieval.ipynb
+├── 07_Advanced_Retrievers/
+│   ├── 01_Cat_Health_Advanced_Retrieval.ipynb
+│   ├── pyproject.toml
+│   ├── README.md
+│   └── data/
+│       └── cat_health_guidelines.pdf
+└── 08_MCP/
+   ├── advanced_client.py
+   ├── client.py
+   ├── server.py
    ├── pyproject.toml
    ├── README.md
-   └── data/
-      └── cat_health_guidelines.pdf
+   ├── app/
+   └── catshop.db
 ```
