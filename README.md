@@ -14,6 +14,7 @@ A hands-on course covering the foundations of production AI engineering — from
 | 04  | [Multi-Agent Systems](./04_Multi_Agent_Systems/)                                         | Build a multi-agent deep research system using LangChain and LangGraph                                          |
 | 05  | [Synthetic Data Generation for RAG Evals](./05_Synthetic_Data_Generation_for_RAG_Evals/) | Synthetic data generation for rag evals                                                                         |
 | 06  | [Agentic RAG Evaluation](./06_Agentic_RAG_Evaluation/)                                   | Agentic RAG evaluation                                                                                          |
+| 07  | [Advanced Retrievers](./07_Advanced_Retrievers/)                                         | Advanced Retrievers                                                                                             |
 
 ---
 
@@ -90,11 +91,17 @@ The-AI-Engineering-Certification-v1.0-main/
 │   │   ├── cat_health_knowledge_graph.json
 │   │   └── cat_health_synthetic_testset.jsonl
 │   └── data/
-└── 06_Agentic_RAG_Evaluation/
-    ├── 01_Metal_Price_Agent_Evaluation_Ragas_LangGraph.ipynb
-    ├── pyproject.toml
-    ├── README.md
-    └── data/
-        ├── agent_regression_suite.jsonl
-        └── HealthWellnessGuide.txt
+├── 06_Agentic_RAG_Evaluation/
+│   ├── 01_Metal_Price_Agent_Evaluation_Ragas_LangGraph.ipynb
+│   ├── pyproject.toml
+│   ├── README.md
+│   └── data/
+│       ├── agent_regression_suite.jsonl
+│       └── HealthWellnessGuide.txt
+└── 07_Advanced_Retrievers/
+   ├── 01_Cat_Health_Advanced_Retrieval.ipynb
+   ├── pyproject.toml
+   ├── README.md
+   └── data/
+      └── cat_health_guidelines.pdf
 ```
