@@ -16,7 +16,8 @@ A hands-on course covering the foundations of production AI engineering — from
 | 06  | [Agentic RAG Evaluation](./06_Agentic_RAG_Evaluation/)                                   | Agentic RAG evaluation                                                                                          |
 | 07  | [Advanced Retrievers](./07_Advanced_Retrievers/)                                         | Advanced Retrievers                                                                                             |
 | 08  | [MCP](./08_MCP/)                                                                         | MCP                                                                                                             |
-| 09  | [MCP](./09_Agent_Servers/)                                                               | Agent Servers                                                                                                   |
+| 09  | [Agent Servers](./09_Agent_Servers/)                                                     | Agent Servers                                                                                                   |
+| 10  | [LLM Servers](./10_LLM_Servers/)                                                         | LLM Servers                                                                                                     |
 
 ---
 
@@ -114,14 +115,26 @@ The-AI-Engineering-Certification-v1.0-main/
 │   ├── README.md
 │   ├── app/
 │   └── catshop.db
-└── 09_Agent_Servers/
+├── 09_Agent_Servers/
+│   ├── main.py
+│   ├── pyproject.toml
+│   ├── README.md
+│   ├── langgraph.json
+│   ├── Dockerfile.generated
+│   ├── docker-compose.yml
+│   ├── app/
+│   ├── data/
+│   └── frontend/
+└── 10_LLM_Servers/
    ├── main.py
    ├── pyproject.toml
    ├── README.md
    ├── langgraph.json
-   ├── Dockerfile.generated
-   ├── docker-compose.yml
+   ├── mcp.json
+   ├── ENDPOINT_SETUP.md
    ├── app/
    ├── data/
-   └── frontend/
+   ├── endpoint_slammer.ipynb
+   ├── local_vs_fireworks_comparison.ipynb
+   └── ragas_cost_evaluation.ipynb
 ```
