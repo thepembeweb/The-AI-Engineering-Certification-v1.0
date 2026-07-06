@@ -1,0 +1,23 @@
+services:
+  langgraph-redis:
+    image: redis:7
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 1s
+      retries: 5
+
+  langgraph-api:
+    build:
+      context: .
+      dockerfile: Dockerfile.generated
+    ports:
+      - "8123:8000"
+    depends_on:
+      langgraph-redis:
+        condition: service_healthy
+    env_file:
+      - .env
+    environment:
+      REDIS_URI: redis://langgraph-redis:6379/0
+      LANGSMITH_ENDPOINT: ${LANGSMITH_ENDPOINT:-https://api.smith.langchain.com}

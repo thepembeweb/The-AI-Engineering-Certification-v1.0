@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "09-agent-servers"
+version = "0.1.0"
+description = "LangGraph agent server deployed on LangSmith with a Next.js frontend"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "langchain>=1.0.0",
+    "langgraph>=1.0.10",
+    "langgraph-cli>=0.4.14",
+    "langgraph-api>=0.4.28",
+    "langchain-core>=1.2.16",
+    "langchain-openai>=0.3.0",
+    "langchain-community>=0.4.1",
+    "langchain-tavily>=0.1.0",
+    "langchain-text-splitters>=1.1.1",
+    "langchain-qdrant>=1.1.0",
+    "qdrant-client>=1.17.0",
+    "pymupdf>=1.27.1",
+    "tiktoken>=0.12.0",
+    "arxiv>=2.1.0,<4.0.0",
+    "python-dotenv>=1.2.2",
+]
+
+[tool.setuptools]
+packages = ["app", "app.graphs"]

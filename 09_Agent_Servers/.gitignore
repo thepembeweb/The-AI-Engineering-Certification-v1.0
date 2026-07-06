@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.python-version-local
+
+# Environment
+.env
+.env.local
+
+# uv
+uv.lock
+
+# LangGraph
+.langgraph_api/
+
+# Node / Next.js (frontend)
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/.vercel/
+frontend/.env*.local
+frontend/next-env.d.ts
+
+# OS / editor
+.DS_Store
+
+.vercel

@@ -1,0 +1,17 @@
+.git
+.gitignore
+.venv
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache
+.mypy_cache
+.ruff_cache
+.langgraph_api
+frontend/node_modules
+frontend/.next
+frontend/
+node_modules
+.env
+README.md

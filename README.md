@@ -16,6 +16,7 @@ A hands-on course covering the foundations of production AI engineering — from
 | 06  | [Agentic RAG Evaluation](./06_Agentic_RAG_Evaluation/)                                   | Agentic RAG evaluation                                                                                          |
 | 07  | [Advanced Retrievers](./07_Advanced_Retrievers/)                                         | Advanced Retrievers                                                                                             |
 | 08  | [MCP](./08_MCP/)                                                                         | MCP                                                                                                             |
+| 09  | [MCP](./09_Agent_Servers/)                                                               | Agent Servers                                                                                                   |
 
 ---
 
@@ -105,12 +106,22 @@ The-AI-Engineering-Certification-v1.0-main/
 │   ├── README.md
 │   └── data/
 │       └── cat_health_guidelines.pdf
-└── 08_MCP/
-   ├── advanced_client.py
-   ├── client.py
-   ├── server.py
+├── 08_MCP/
+│   ├── advanced_client.py
+│   ├── client.py
+│   ├── server.py
+│   ├── pyproject.toml
+│   ├── README.md
+│   ├── app/
+│   └── catshop.db
+└── 09_Agent_Servers/
+   ├── main.py
    ├── pyproject.toml
    ├── README.md
+   ├── langgraph.json
+   ├── Dockerfile.generated
+   ├── docker-compose.yml
    ├── app/
-   └── catshop.db
+   ├── data/
+   └── frontend/
 ```
