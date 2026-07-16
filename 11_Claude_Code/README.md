@@ -104,6 +104,20 @@ Extend your working chat app with **at least one** of the following (built with 
 
 Whichever you pick, demo it in your Loom video and explain the design decision in one paragraph.
 
+## Design Decision
+
+The core design decision:
+
+- `generate_reply()` was replaced with an async-generator, `stream_agent_events()`, that yields SSE-ready dicts while the agent works.
+- The backend emits:
+  - one `{"type": "progress", ...}` event per tool call;
+  - translated via `_describe_tool_use()` into friendly present-progressive text (for example: "Reading `main.py`..." or "Searching for files matching `...`...");
+  - followed by one terminal `{"type": "reply", ...}` event.
+- `/api/chat` now returns a `StreamingResponse` (`text/event-stream`) instead of a single JSON body.
+- On the frontend, the client intentionally does not use `EventSource` (it only supports `GET`, while this endpoint needs a `POST` body).
+- Instead, it reads the response manually via `getReader()`/`TextDecoder`, parses SSE frames, and updates the pending assistant bubble live.
+- The in-progress bubble remains dimmed monospace to preserve the existing "instrument chrome vs. human reply" visual distinction until the final reply swaps in.
+
 ## Advanced Activity: The Cat Shop Concierge
 
 Connect your Session 8 cat shop MCP server to your chat app's agent via the SDK's `mcp_servers` option. Your chat app becomes a shopping concierge: users can browse the catalog, fill a cart, and check out — in natural language, through the UI you built, hitting the OAuth-protected server you wrote in Session 8.
