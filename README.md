@@ -19,6 +19,7 @@ A hands-on course covering the foundations of production AI engineering — from
 | 09  | [Agent Servers](./09_Agent_Servers/)                                                     | Agent Servers                                                                                                   |
 | 10  | [LLM Servers](./10_LLM_Servers/)                                                         | LLM Servers                                                                                                     |
 | 11  | [Claude Code](./11_Claude_Code/)                                                         | Claude Code                                                                                                     |
+| 12  | [Production Agent Patterns](./12_Production_Agent_Patterns/)                             | Production Agent Patterns                                                                                       |
 
 ---
 
@@ -138,11 +139,17 @@ The-AI-Engineering-Certification-v1.0-main/
 │   ├── endpoint_slammer.ipynb
 │   ├── local_vs_fireworks_comparison.ipynb
 │   └── ragas_cost_evaluation.ipynb
-└── 11_Claude_Code/
-   ├── 01_Installing_Claude_Code.md
-   ├── 02_Using_Claude_Code.md
-   ├── 03_Claude_Agent_SDK.md
-   ├── email.txt
+├── 11_Claude_Code/
+│   ├── 01_Installing_Claude_Code.md
+│   ├── 02_Using_Claude_Code.md
+│   ├── 03_Claude_Agent_SDK.md
+│   ├── email.txt
+│   ├── README.md
+│   └── chat-app/
+└── 12_Production_Agent_Patterns/
+   ├── 01_Cat_Health_Agent_Guardrails.ipynb
+   ├── 02_Cat_Health_Agent_Caching.ipynb
+   ├── pyproject.toml
    ├── README.md
-   └── chat-app/
+   └── a2a/
 ```
