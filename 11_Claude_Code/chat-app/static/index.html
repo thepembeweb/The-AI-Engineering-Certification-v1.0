@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Echo Bench</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    color-scheme: dark;
+    --ink: #10192a;
+    --panel: #17233a;
+    --line: #2a3a54;
+    --paper: #ece7da;
+    --paper-dim: #9aa6bb;
+    --signal: #ff6b47;
+    --trace: #59e6c2;
+    --danger: #ff8a8a;
+    --font-mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+    --font-sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background: var(--ink);
+    background-image:
+      radial-gradient(ellipse 900px 500px at 50% -10%, rgba(89, 230, 194, 0.06), transparent),
+      radial-gradient(ellipse 700px 400px at 100% 100%, rgba(255, 107, 71, 0.05), transparent);
+    color: var(--paper);
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+  }
+
+  .bench {
+    width: 100%;
+    max-width: 720px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: var(--panel);
+    border-left: 1px solid var(--line);
+    border-right: 1px solid var(--line);
+    animation: rise 0.5s ease both;
+  }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 18px 22px;
+    border-bottom: 1px solid var(--line);
+    font-family: var(--font-mono);
+  }
+
+  .wordmark {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--paper);
+  }
+
+  .wordmark::before {
+    content: "▍";
+    color: var(--signal);
+    margin-right: 2px;
+  }
+
+  .readout {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: var(--paper-dim);
+    white-space: nowrap;
+  }
+
+  .status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--trace);
+    box-shadow: 0 0 0 0 rgba(89, 230, 194, 0.5);
+    animation: breathe 2.4s ease-in-out infinite;
+  }
+
+  .status-dot.busy {
+    background: var(--signal);
+    animation: breathe 0.9s ease-in-out infinite;
+  }
+
+  @keyframes breathe {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(89, 230, 194, 0.35); }
+    50% { box-shadow: 0 0 0 5px rgba(89, 230, 194, 0); }
+  }
+
+  #history {
+    flex: 1;
+    overflow-y: auto;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: column;
+    max-width: 78%;
+    margin-top: 18px;
+  }
+
+  .row:first-child {
+    margin-top: 0;
+  }
+
+  .row.user {
+    align-self: flex-end;
+    align-items: flex-end;
+  }
+
+  .row.assistant {
+    align-self: flex-start;
+    align-items: flex-start;
+  }
+
+  .tag {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--paper-dim);
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .row.user .tag { color: var(--signal); }
+  .row.assistant .tag { color: var(--trace); }
+
+  .card {
+    padding: 11px 14px;
+    background: rgba(236, 231, 218, 0.03);
+    border: 1px solid var(--line);
+    border-left-width: 3px;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 14.5px;
+  }
+
+  .row.user .card {
+    border-left-color: var(--signal);
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 8px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+
+  .row.assistant .card {
+    border-left-color: var(--trace);
+    border-radius: 8px;
+  }
+
+  .row.pending .card {
+    color: var(--paper-dim);
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    letter-spacing: 0.02em;
+  }
+
+  .trace {
+    align-self: center;
+    width: 1px;
+    height: 16px;
+    margin-top: 6px;
+    background: repeating-linear-gradient(to bottom, var(--trace) 0 3px, transparent 3px 7px);
+  }
+
+  .trace.live {
+    animation: pulse-trace 1s linear infinite;
+  }
+
+  @keyframes pulse-trace {
+    0% { opacity: 0.25; }
+    50% { opacity: 1; }
+    100% { opacity: 0.25; }
+  }
+
+  .empty-state {
+    margin: auto;
+    text-align: center;
+    color: var(--paper-dim);
+    font-size: 14px;
+    max-width: 32ch;
+  }
+
+  .empty-state .glyph {
+    font-family: var(--font-mono);
+    font-size: 20px;
+    color: var(--trace);
+    display: block;
+    margin-bottom: 10px;
+    letter-spacing: 0.2em;
+  }
+
+  form#composer {
+    display: flex;
+    gap: 10px;
+    padding: 16px 22px;
+    border-top: 1px solid var(--line);
+    background: var(--panel);
+  }
+
+  #input {
+    flex: 1;
+    padding: 12px 14px;
+    background: var(--ink);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    color: var(--paper);
+    font-family: var(--font-sans);
+    font-size: 14.5px;
+    outline: none;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  #input::placeholder {
+    color: var(--paper-dim);
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    letter-spacing: 0.04em;
+  }
+
+  #input:focus-visible {
+    border-color: var(--trace);
+    box-shadow: 0 0 0 3px rgba(89, 230, 194, 0.18);
+  }
+
+  button#send {
+    padding: 0 22px;
+    border: none;
+    border-radius: 6px;
+    background: var(--signal);
+    color: var(--ink);
+    font-family: var(--font-mono);
+    font-weight: 600;
+    font-size: 12.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: filter 0.15s ease;
+  }
+
+  button#send:hover:not(:disabled) {
+    filter: brightness(1.08);
+  }
+
+  button#send:focus-visible {
+    outline: 2px solid var(--trace);
+    outline-offset: 2px;
+  }
+
+  button#send:disabled {
+    opacity: 0.4;
+    cursor: default;
+  }
+
+  .row.error .card {
+    border-left-color: var(--danger);
+    color: var(--danger);
+  }
+  .row.error .tag { color: var(--danger); }
+
+  @media (max-width: 480px) {
+    header { padding: 14px 16px; flex-wrap: wrap; row-gap: 6px; }
+    #history { padding: 16px; }
+    form#composer { padding: 12px 16px; }
+    .row { max-width: 88%; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .bench { animation: none; }
+    .status-dot { animation: none; }
+    .trace.live { animation: none; opacity: 0.6; }
+  }
+</style>
+</head>
+<body>
+  <div class="bench">
+    <header>
+      <span class="wordmark">Echo Bench</span>
+      <span class="readout">
+        <span id="conv-id">conv·——</span>
+        <span class="status"><span class="status-dot" id="status-dot"></span><span id="status-label">listening</span></span>
+      </span>
+    </header>
+    <div id="history">
+      <div class="empty-state" id="empty-state">
+        <span class="glyph">···</span>
+        No signal yet — send a message to start the exchange.
+      </div>
+    </div>
+    <form id="composer">
+      <input id="input" type="text" placeholder="Type a message…" autocomplete="off" autofocus>
+      <button id="send" type="submit">Send</button>
+    </form>
+  </div>
+
+  <script>
+    const conversationId = crypto.randomUUID();
+    const history = document.getElementById('history');
+    const emptyState = document.getElementById('empty-state');
+    const form = document.getElementById('composer');
+    const input = document.getElementById('input');
+    const sendButton = document.getElementById('send');
+    const statusDot = document.getElementById('status-dot');
+    const statusLabel = document.getElementById('status-label');
+
+    document.getElementById('conv-id').textContent = `conv·${conversationId.slice(0, 8)}`;
+
+    function timestamp() {
+      return new Date().toLocaleTimeString('en-US', { hour12: false });
+    }
+
+    function setBusy(busy) {
+      statusDot.classList.toggle('busy', busy);
+      statusLabel.textContent = busy ? 'receiving' : 'listening';
+    }
+
+    function addRow(role, label, text) {
+      emptyState.remove();
+      const row = document.createElement('div');
+      row.className = `row ${role}`;
+      row.innerHTML = `<div class="tag">${label} · ${timestamp()}</div><div class="card"></div>`;
+      row.querySelector('.card').textContent = text;
+      history.appendChild(row);
+      history.scrollTop = history.scrollHeight;
+      return row;
+    }
+
+    function addTrace() {
+      const trace = document.createElement('div');
+      trace.className = 'trace live';
+      history.appendChild(trace);
+      history.scrollTop = history.scrollHeight;
+      return trace;
+    }
+
+    // Parses one "event: ...\ndata: ...\n\n" frame. Returns null for anything
+    // without a data line (e.g. SSE comments/keepalives).
+    function parseSSEFrame(raw) {
+      let eventType = 'message';
+      const dataLines = [];
+      for (const line of raw.split('\n')) {
+        if (line.startsWith('event:')) eventType = line.slice(6).trim();
+        else if (line.startsWith('data:')) dataLines.push(line.slice(5).trim());
+      }
+      if (!dataLines.length) return null;
+      try {
+        return { type: eventType, data: JSON.parse(dataLines.join('\n')) };
+      } catch {
+        return null;
+      }
+    }
+
+    // Reads the /api/chat SSE stream, calling onProgress for each "progress"
+    // event and onReply exactly once for the terminal "reply" event.
+    async function streamChat(message, onProgress, onReply) {
+      const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message, conversation_id: conversationId }),
+      });
+
+      if (!response.ok || !response.body) {
+        throw new Error(`Request failed with status ${response.status}`);
+      }
+
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder();
+      let buffer = '';
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        buffer += decoder.decode(value, { stream: true });
+
+        let boundary;
+        while ((boundary = buffer.indexOf('\n\n')) !== -1) {
+          const frame = parseSSEFrame(buffer.slice(0, boundary));
+          buffer = buffer.slice(boundary + 2);
+          if (!frame) continue;
+          if (frame.type === 'progress') onProgress(frame.data.text);
+          else if (frame.type === 'reply') onReply(frame.data.text);
+        }
+      }
+    }
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const message = input.value.trim();
+      if (!message) return;
+
+      addRow('user', 'you', message);
+      input.value = '';
+      input.focus();
+      sendButton.disabled = true;
+      setBusy(true);
+
+      const trace = addTrace();
+      const pending = addRow('assistant pending', 'echo', '· · ·');
+
+      try {
+        await streamChat(
+          message,
+          (progressText) => {
+            pending.querySelector('.card').textContent = progressText;
+          },
+          (replyText) => {
+            pending.classList.remove('pending');
+            pending.querySelector('.card').textContent = replyText;
+          },
+        );
+      } catch (err) {
+        pending.classList.remove('pending');
+        pending.classList.add('error');
+        pending.querySelector('.tag').textContent = `error · ${timestamp()}`;
+        pending.querySelector('.card').textContent = "Echo didn't come back. Check the connection and try again.";
+        console.error(err);
+      } finally {
+        trace.classList.remove('live');
+        sendButton.disabled = false;
+        setBusy(false);
+      }
+    });
+  </script>
+</body>
+</html>

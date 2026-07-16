@@ -18,6 +18,7 @@ A hands-on course covering the foundations of production AI engineering — from
 | 08  | [MCP](./08_MCP/)                                                                         | MCP                                                                                                             |
 | 09  | [Agent Servers](./09_Agent_Servers/)                                                     | Agent Servers                                                                                                   |
 | 10  | [LLM Servers](./10_LLM_Servers/)                                                         | LLM Servers                                                                                                     |
+| 11  | [Claude Code](./11_Claude_Code/)                                                         | Claude Code                                                                                                     |
 
 ---
 
@@ -125,16 +126,23 @@ The-AI-Engineering-Certification-v1.0-main/
 │   ├── app/
 │   ├── data/
 │   └── frontend/
-└── 10_LLM_Servers/
-   ├── main.py
-   ├── pyproject.toml
+├── 10_LLM_Servers/
+│   ├── main.py
+│   ├── pyproject.toml
+│   ├── README.md
+│   ├── langgraph.json
+│   ├── mcp.json
+│   ├── ENDPOINT_SETUP.md
+│   ├── app/
+│   ├── data/
+│   ├── endpoint_slammer.ipynb
+│   ├── local_vs_fireworks_comparison.ipynb
+│   └── ragas_cost_evaluation.ipynb
+└── 11_Claude_Code/
+   ├── 01_Installing_Claude_Code.md
+   ├── 02_Using_Claude_Code.md
+   ├── 03_Claude_Agent_SDK.md
+   ├── email.txt
    ├── README.md
-   ├── langgraph.json
-   ├── mcp.json
-   ├── ENDPOINT_SETUP.md
-   ├── app/
-   ├── data/
-   ├── endpoint_slammer.ipynb
-   ├── local_vs_fireworks_comparison.ipynb
-   └── ragas_cost_evaluation.ipynb
+   └── chat-app/
 ```

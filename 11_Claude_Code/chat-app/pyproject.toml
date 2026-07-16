@@ -1,0 +1,12 @@
+[project]
+name = "chat-app"
+version = "0.1.0"
+description = "Chat web app with a FastAPI backend and a plain HTML/CSS/JS frontend, backed by a read-only Claude Code concierge agent"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "claude-agent-sdk>=0.2.119",
+    "fastapi>=0.115.0",
+    "python-dotenv>=1.2.2",
+    "uvicorn[standard]>=0.32.0",
+]

@@ -1,0 +1,61 @@
+From: Marge Pawlowski <marge@whiskerfulwonders.example>
+To: Engineering Team
+Subject: HELP — I need a "cat expert in a browser tab" (my customers keep calling me at 2am)
+
+Hi team!
+
+Marge here, owner of Whiskerful Wonders Cat Café (14 resident cats, roughly 400
+anxious cat parents in our loyalty program, and one very tired me).
+
+Here's my problem: every single day someone messages our shop account asking
+things like "Mr. Bigglesworth ate a grape, is he going to die??" or "my kitten's
+nose feels warm, is that a fever?" I love these people, but I am one woman with
+a milk frother, not a 24/7 feline hotline.
+
+So I want to hire you to build me a little web app. Working title:
+"Whiskers, the Cat Health Assistant." Here's my wish list:
+
+1. A chat page. Just a friendly chat window in the browser where people type a
+   question and get an answer. Nothing fancy to install — a website.
+
+2. It should feel alive. When Whiskers is "thinking," I want the answer to
+   appear word by word, like it's typing back. My customers are impatient
+   (they learned it from their cats).
+
+3. It needs to remember the conversation. If someone says "my cat is Biscuit,
+   he's 12" and then asks "is tuna okay for him?", Whiskers should still know
+   who Biscuit is. No goldfish memory, please. Wrong animal entirely.
+
+4. Real answers, not vibes. Two things it MUST be able to actually look up
+   rather than guess:
+   - Vitals check: if a customer says "her temperature is 39.8 and she's
+     breathing 40 times a minute," Whiskers should check those numbers against
+     real normal ranges for cats and say what's high, low, or fine.
+   - Food & plant safety: "can cats eat cheese?" "he chewed on the lily!!" —
+     I want a proper toxic / caution / safe lookup, with the lily one treated
+     like the emergency it truly is.
+
+5. Guardrails, guardrails, guardrails:
+   - Whiskers is NOT a vet and should say so. General guidance only, and it
+     should tell people to call an actual veterinarian for anything serious.
+   - For scary symptoms (can't breathe, can't pee, ate a lily, collapsed…)
+     it should lead with "GO TO THE EMERGENCY VET" before anything else.
+   - Cats only! If someone asks about their iguana or their crypto portfolio,
+     Whiskers should politely steer them back to cats.
+   - And it should not be able to poke around your servers or the internet —
+     give it exactly the two lookup abilities above and nothing else. I saw a
+     documentary about rogue AI. Not in my café.
+
+6. If something breaks, no scary error screens. A polite "sorry, try again in
+   a moment — and call a vet if it's urgent" is exactly the tone I want.
+
+Budget: I will pay in money AND unlimited oat-milk lattes AND you may pet
+Chairman Meow (he bites, but affectionately).
+
+Can you have something I can click around in soon? I'd love to see it answer a
+real question like "my cat ate chocolate, how bad is it?" from start to finish.
+
+Purrfully yours,
+Marge Pawlowski
+Whiskerful Wonders Cat Café — "Where every latte comes with a side of judgment"
+P.S. If you don't name it Whiskers I will be politely devastated.
