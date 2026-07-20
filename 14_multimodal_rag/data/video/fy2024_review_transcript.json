@@ -1,0 +1,41 @@
+{
+  "video": "fy2024_review.mp4",
+  "fps": 8,
+  "segments": [
+    {
+      "id": "seg_000",
+      "start": 0.0,
+      "end": 6.0,
+      "text": "Welcome to the ACME Robotics fiscal year 2024 review. We'll cover revenue, reliability, and team growth.",
+      "onscreen_asset": null
+    },
+    {
+      "id": "seg_001",
+      "start": 6.0,
+      "end": 16.0,
+      "text": "Revenue reached a record twenty-seven million dollars in the fourth quarter, driven by a large public-sector contract, up from twelve million in the first quarter.",
+      "onscreen_asset": "fig_revenue_quarterly.png"
+    },
+    {
+      "id": "seg_002",
+      "start": 16.0,
+      "end": 26.0,
+      "text": "Monthly churn spiked to six point two percent in March because of a billing bug, then improved to three point nine percent in April after the onboarding revamp.",
+      "onscreen_asset": "fig_churn_monthly.png"
+    },
+    {
+      "id": "seg_003",
+      "start": 26.0,
+      "end": 37.0,
+      "text": "On reliability, APAC ninety-fifth percentile latency reached two hundred forty milliseconds, the worst of any region, which repeatedly triggered on-call pages. A regional cache brought it back to target.",
+      "onscreen_asset": "fig_latency_region.png"
+    },
+    {
+      "id": "seg_004",
+      "start": 37.0,
+      "end": 45.0,
+      "text": "Finally, the team grew to a hundred and five people, with engineering the largest department at forty-five.",
+      "onscreen_asset": "fig_headcount_dept.png"
+    }
+  ]
+}

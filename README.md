@@ -20,6 +20,7 @@ A hands-on course covering the foundations of production AI engineering — from
 | 10  | [LLM Servers](./10_LLM_Servers/)                                                         | LLM Servers                                                                                                     |
 | 11  | [Claude Code](./11_Claude_Code/)                                                         | Claude Code                                                                                                     |
 | 12  | [Production Agent Patterns](./12_Production_Agent_Patterns/)                             | Production Agent Patterns                                                                                       |
+| 14  | [Multimodal Rag](./14_Multimodal_Rag/)                                                   | Multimodal Rag                                                                                                  |
 
 ---
 
@@ -146,10 +147,15 @@ The-AI-Engineering-Certification-v1.0-main/
 │   ├── email.txt
 │   ├── README.md
 │   └── chat-app/
-└── 12_Production_Agent_Patterns/
-   ├── 01_Cat_Health_Agent_Guardrails.ipynb
-   ├── 02_Cat_Health_Agent_Caching.ipynb
-   ├── pyproject.toml
-   ├── README.md
-   └── a2a/
+├── 12_Production_Agent_Patterns/
+│   ├── 01_Cat_Health_Agent_Guardrails.ipynb
+│   ├── 02_Cat_Health_Agent_Caching.ipynb
+│   ├── pyproject.toml
+│   ├── README.md
+│   └── a2a/
+└── 14_multimodal_rag/
+    ├── multimodal_rag.ipynb
+    ├── pyproject.toml
+    ├── README.md
+    └── data/
 ```

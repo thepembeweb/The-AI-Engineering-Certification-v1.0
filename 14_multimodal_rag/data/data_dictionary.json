@@ -1,0 +1,55 @@
+{
+  "company": "ACME Robotics (fictional / synthetic)",
+  "images": {
+    "fig_revenue_quarterly.png": {
+      "about": "Quarterly revenue 2024",
+      "fact": "Q4 highest at $27M; Q1 lowest at $12M",
+      "demo_question": "Which quarter had the highest revenue and by how much?"
+    },
+    "fig_churn_monthly.png": {
+      "about": "Monthly churn rate",
+      "fact": "March spiked to 6.2%; April best at 3.9%",
+      "demo_question": "In which month was churn highest?"
+    },
+    "fig_latency_region.png": {
+      "about": "P95 latency by region",
+      "fact": "APAC worst at 240ms; US best at 120ms",
+      "demo_question": "What is the P95 latency in APAC?"
+    },
+    "fig_headcount_dept.png": {
+      "about": "Headcount by department",
+      "fact": "Engineering largest at 45",
+      "demo_question": "Which department has the most people?"
+    },
+    "fig_nps_quarterly.png": {
+      "about": "NPS by quarter",
+      "fact": "Rose to 41 in Q4; dipped to 28 in Q3",
+      "demo_question": "How did NPS change over the year?"
+    },
+    "fig_cloud_cost.png": {
+      "about": "Cloud cost breakdown",
+      "fact": "Compute 55%, Storage 20%, Network 15%, Other 10%",
+      "demo_question": "How is cloud spend distributed?"
+    }
+  },
+  "text": {
+    "doc_gtm_strategy.md": {
+      "about": "gtm strategy"
+    },
+    "doc_infrastructure.md": {
+      "about": "infrastructure"
+    },
+    "doc_board_notes.md": {
+      "about": "board notes"
+    },
+    "doc_people_ops.md": {
+      "about": "people ops"
+    },
+    "doc_product_roadmap.md": {
+      "about": "product roadmap"
+    },
+    "doc_finance_costs.md": {
+      "about": "finance costs"
+    }
+  }
+}

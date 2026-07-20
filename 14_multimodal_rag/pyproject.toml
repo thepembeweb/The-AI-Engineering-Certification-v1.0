@@ -1,0 +1,26 @@
+[project]
+name = "multimodal-rag-vlm"
+version = "1.0.0"
+description = "Session 14: Multi-Modal RAG with Vision-Language Models — AI Makerspace"
+readme = "README.md"
+requires-python = ">=3.13,<3.14"
+dependencies = [
+    "langchain>=0.3",
+    "langchain-openai>=0.3",
+    "langchain-anthropic>=0.3",
+    "langchain-qdrant>=0.2",
+    "qdrant-client>=1.12",
+    "sentence-transformers>=3.0",
+    "pillow>=10.0",
+    "matplotlib>=3.9",
+    "imageio>=2.34",
+    "imageio-ffmpeg>=0.5",
+    "opencv-python-headless>=4.10",
+    "python-dotenv>=1.0",
+]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=6.29",
+    "jupyter>=1.1",
+]
