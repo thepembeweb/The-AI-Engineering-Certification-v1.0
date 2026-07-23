@@ -1,0 +1,23 @@
+[project]
+name = "aim-reasoning-model-fine-tuning"
+version = "0.1.0"
+description = "Session 15 reasoning-model fine-tuning with Unsloth and GRPO for AI Makerspace."
+requires-python = ">=3.13,<3.14"
+dependencies = [
+    "unsloth==2026.7.4",
+    "vllm==0.15.1",
+    "trl==0.22.2",
+    "transformers==4.56.2",
+    "datasets>=3.4.1,<4.4.0",
+    "ipykernel>=6.29.0",
+    "jupyterlab>=4.2.0",
+]
+
+[project.optional-dependencies]
+wandb = ["wandb>=0.19.0"]
+
+[tool.uv]
+package = false
+# vLLM, Triton, and xformers only ship Linux wheels; lock for Linux/WSL2 and
+# fail fast (instead of half-resolving) on macOS.
+environments = ["sys_platform == 'linux'"]

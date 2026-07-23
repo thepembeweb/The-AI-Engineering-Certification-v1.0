@@ -1,0 +1,7 @@
+# Training artifacts
+outputs/
+grpo_saved_lora/
+wandb/
+
+# Environment
+.venv/

@@ -21,6 +21,7 @@ A hands-on course covering the foundations of production AI engineering — from
 | 11  | [Claude Code](./11_Claude_Code/)                                                         | Claude Code                                                                                                     |
 | 12  | [Production Agent Patterns](./12_Production_Agent_Patterns/)                             | Production Agent Patterns                                                                                       |
 | 14  | [Multimodal Rag](./14_Multimodal_Rag/)                                                   | Multimodal Rag                                                                                                  |
+| 15  | [15 Reasoning Model Fine Tuning](./15_Reasoning_Model_Fine_Tuning/)                      | Reasoning Model Fine Tuning                                                                                     |
 
 ---
 
@@ -153,8 +154,14 @@ The-AI-Engineering-Certification-v1.0-main/
 │   ├── pyproject.toml
 │   ├── README.md
 │   └── a2a/
-└── 14_multimodal_rag/
-    ├── multimodal_rag.ipynb
+├── 14_multimodal_rag/
+│   ├── multimodal_rag.ipynb
+│   ├── pyproject.toml
+│   ├── README.md
+│   └── data/
+└── 15_Reasoning_Model_Fine_Tuning/
+    ├── 01_Reasoning_Fine_Tuning_Unsloth_GRPO.ipynb
+    ├── ColabVersion__01_Reasoning_Fine_Tuning_Unsloth_GRPO.ipynb
     ├── pyproject.toml
     ├── README.md
     └── data/
